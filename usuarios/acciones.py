@@ -59,7 +59,8 @@ class Acciones:
             self.proximasAcciones(usuario)
 
         elif accion == "eliminar":
-            print("Que nota vas a eliminar")    
+            hacer.eliminar(usuario)
+            self.proximasAcciones(usuario)
 
         elif accion == "salir":
             print(f"Hasta pronto {usuario[1]}")
