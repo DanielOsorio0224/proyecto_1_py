@@ -1,5 +1,5 @@
 import usuarios.usuario as modelo
-
+import notas.acciones
 class Acciones:
 
     def registro(self):
@@ -39,4 +39,27 @@ class Acciones:
             print("Login incorrecto")
 
     def proximasAcciones(self, usuario):
-        return "accion"        
+        print("""
+        Acciones disponibles
+        - Crear nota (crear)
+        - Mostrar tus notas (mostrar)
+        - Eliminar nota (eliminar)
+        - Salir (salir)                              
+        """)        
+
+        accion = input("Que quieres hacer: ")
+        hacer = notas.acciones.Acciones()
+
+        if accion == "crear":            
+            hacer.crear(usuario)
+            self.proximasAcciones(usuario)
+
+        elif accion == "mostrar":
+            print("Mira tus notas")    
+
+        elif accion == "eliminar":
+            print("Que nota vas a eliminar")    
+
+        elif accion == "salir":
+            print(f"Hasta pronto {usuario[1]}")
+            exit()                
